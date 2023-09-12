@@ -17,11 +17,10 @@ var processor = new OrderProcessor
     OnOrderInitialized = (order) => order.IsReadyForShipment
 };
 
-OrderProcessor.ProcessCompleted OnCompleted = (order) =>
+Action<Order> OnCompleted = (order) =>
 {
     Console.WriteLine($"Porocessed {order.OrderNumber}");
 };
-
 /*chain += (order) =>{
     Console.WriteLine("Refill stock ...");
 };*/
