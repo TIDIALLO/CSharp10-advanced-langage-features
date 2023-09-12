@@ -25,5 +25,6 @@ namespace WarehouseManagementSystem.Business
 
             OnCompleted?.Invoke(order );
         }
+
     }
 }

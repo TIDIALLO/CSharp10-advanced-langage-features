@@ -12,19 +12,27 @@ var order = new Order
     }
 };
 
-/*var processor = new OrderProcessor
+var processor = new OrderProcessor
 {
     OnOrderInitialized = SendMessageToWarehouse
 };
-processor.Process(order, SendCofirmationnEmail);*/
 
-OrderProcessor.OrderInitialized GetOnInitialized()
+OrderProcessor.ProcessCompleted chain = One;
+chain += Two;
+chain += Three;
+chain(order);
+chain -=  Three;
+chain += SendCofirmationnEmail;
+chain.Invoke(order);
+processor.Process(order, chain);
+
+/*OrderProcessor.OrderInitialized GetOnInitialized()
 {
     return SendMessageToWarehouse;
 }
-
-//GetOnInitialized()(order);
+GetOnInitialized()(order);
 GetOnInitialized()?.Invoke(order);
+*/
 
 
 bool SendMessageToWarehouse(Order order)
@@ -37,3 +45,8 @@ void SendCofirmationnEmail(Order order)
 {
     Console.WriteLine($"order confirmation email {order.OrderNumber}");
 }
+
+
+void One(Order order) => Console.WriteLine("One");
+void Two(Order order) => Console.WriteLine("Two");
+void Three(Order order) => Console.WriteLine("Three");
