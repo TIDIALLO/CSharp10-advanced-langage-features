@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "d6a4a2d5-a6bf-4b33-aa11-b6e50f564372": {
+      "ProjectGuid": "d6a4a2d5-a6bf-4b33-aa11-b6e50f564372",
+      "DisplayName": "WarehouseManagementSystem",
+      "ColorIndex": 0
+    },
+    "65200ab7-9dc4-48bf-8109-6ce918419285": {
+      "ProjectGuid": "65200ab7-9dc4-48bf-8109-6ce918419285",
+      "DisplayName": "WarehouseManagementSystem.Business",
+      "ColorIndex": 1
+    },
+    "875b6985-a7f5-47b1-969d-7e6f03a034f9": {
+      "ProjectGuid": "875b6985-a7f5-47b1-969d-7e6f03a034f9",
+      "DisplayName": "WarehouseManagementSystem.Domain",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 3
+}
