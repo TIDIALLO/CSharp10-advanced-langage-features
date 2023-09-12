@@ -14,18 +14,18 @@ var order = new Order
 
 var processor = new OrderProcessor
 {
-    OnOrderInitialized = SendMessageToWarehouse
+    OnOrderInitialized = (order) => order.IsReadyForShipment
 };
 
-OrderProcessor.ProcessCompleted chain = (order) =>
+OrderProcessor.ProcessCompleted OnCompleted = (order) =>
 {
     Console.WriteLine($"Porocessed {order.OrderNumber}");
 };
 
-chain += (order) =>{
+/*chain += (order) =>{
     Console.WriteLine("Refill stock ...");
-};
-processor.Process(order, chain);
+};*/
+processor.Process(order, OnCompleted);
 
 
 
