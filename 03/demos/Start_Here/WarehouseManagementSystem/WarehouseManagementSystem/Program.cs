@@ -17,22 +17,17 @@ var processor = new OrderProcessor
     OnOrderInitialized = SendMessageToWarehouse
 };
 
-OrderProcessor.ProcessCompleted chain = One;
-chain += Two;
-chain += Three;
-chain(order);
-chain -=  Three;
-chain += SendCofirmationnEmail;
-chain.Invoke(order);
+OrderProcessor.ProcessCompleted chain = (order) =>
+{
+    Console.WriteLine($"Porocessed {order.OrderNumber}");
+};
+
+chain += (order) =>{
+    Console.WriteLine("Refill stock ...");
+};
 processor.Process(order, chain);
 
-/*OrderProcessor.OrderInitialized GetOnInitialized()
-{
-    return SendMessageToWarehouse;
-}
-GetOnInitialized()(order);
-GetOnInitialized()?.Invoke(order);
-*/
+
 
 
 bool SendMessageToWarehouse(Order order)
