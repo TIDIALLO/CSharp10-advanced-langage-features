@@ -7,6 +7,12 @@ namespace WarehouseManagementSystem.Business
         //public delegate bool OrderInitialized(Order order );
         //public delegate void ProcessCompleted( Order order);
         public Func<Order, bool> OnOrderInitialized { get; set; }
+        public event EventHandler OrderCreated;
+
+        protected virtual void OnOrderCreated()
+        {
+            OrderCreated?.Invoke(this, EventArgs.Empty);
+        }
 
         private void Initialize(Order order)
         {
@@ -23,7 +29,7 @@ namespace WarehouseManagementSystem.Business
 
             Initialize(order);
 
-            OnCompleted?.Invoke(order );
+            OnCompleted?.Invoke(order);
         }
 
     }

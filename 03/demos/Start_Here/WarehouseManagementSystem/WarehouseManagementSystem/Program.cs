@@ -3,7 +3,7 @@ using WarehouseManagementSystem.Domain;
 
 var order = new Order
 {
-    LineItems = new[]
+    LineItems =     new[]
     {
         new Item{ Name = "PS1",Price = 50},
         new Item{ Name = "PS2",Price = 60},

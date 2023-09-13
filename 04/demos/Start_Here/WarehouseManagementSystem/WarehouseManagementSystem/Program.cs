@@ -12,6 +12,12 @@ var order = new Order
     }
 };
 
+var orderCreated = new OrderProcessor();
+orderCreated.OrderCreated += (sender, eventArgs) =>
+{
+    Console.WriteLine("Event test");
+};
+
 var isReadyForShipment = (Order order) =>
 {
     return order.IsReadyForShipment;
@@ -22,7 +28,7 @@ var processor = new OrderProcessor
     OnOrderInitialized = isReadyForShipment
 };
 
-var onCompleted = (object order) =>
+var onCompleted = (Order order) =>
 {
     Console.WriteLine($"Processed {order.OrderNumber}");
 }; 
