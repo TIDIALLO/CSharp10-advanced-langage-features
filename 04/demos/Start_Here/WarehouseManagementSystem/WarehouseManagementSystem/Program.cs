@@ -12,11 +12,6 @@ var order = new Order
     }
 };
 
-var orderCreated = new OrderProcessor();
-orderCreated.OrderCreated += (sender, eventArgs) =>
-{
-    Console.WriteLine("Event test");
-};
 
 var isReadyForShipment = (Order order) =>
 {
@@ -31,8 +26,20 @@ var processor = new OrderProcessor
 var onCompleted = (Order order) =>
 {
     Console.WriteLine($"Processed {order.OrderNumber}");
-}; 
+};
 
+processor.OrderCreated += (sender, eventArgs) => {
+    Thread.Sleep(1000);
+    Console.WriteLine("1");
+};
+processor.OrderCreated += (sender, eventArgs) => {
+    Thread.Sleep(1000);
+    Console.WriteLine("2");
+};
+processor.OrderCreated += (sender, eventArgs) => {
+    Thread.Sleep(1000);
+    Console.WriteLine("3");
+};
 processor.Process(order, onCompleted);
 
 
