@@ -27,10 +27,11 @@ Order order = new Order
     }
 };
 
-    
+
 
 // Deconstruct Other Objects 
-var (orderTotal, isReady) = order;
+//r (orderTotal, isReady) = order;
+var (total, isReady, items) = order;
 
 var dictionary = new Dictionary<string, Order>();
 
@@ -38,7 +39,6 @@ foreach (var (orderId, theOrder) in dictionary)
 {
 
 }
-
 
 
 // Tuple elements ignored because of the names

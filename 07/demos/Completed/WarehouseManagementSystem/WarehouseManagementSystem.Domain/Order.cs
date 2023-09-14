@@ -50,7 +50,8 @@
         {
             return new() { LineItems = items.ToArray() };
         }
-        
+        // Deconstruct method   
+
         public void Deconstruct(out decimal total,
             out bool ready)
         {
