@@ -38,6 +38,11 @@
             return HashCode.Combine(OrderNumber, ShippingProvider, Total, IsReadyForShipment, LineItems);
         }
 
+        public static object Select(Func<object, object> value)
+        {
+            throw new NotImplementedException();
+        }
+
         public static bool operator ==(Order? left, 
             Order? right)
         {

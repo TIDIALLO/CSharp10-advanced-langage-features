@@ -51,5 +51,31 @@ namespace WarehouseManagementSystem.Business
 
             OnOrderProcessCompleted(new() { Order = order });
         }
+        public object Process(IEnumerable<Order> orders)
+        {
+            var summaries = orders.Select(order =>
+            {
+                return new
+                {
+                    Order = order.OrderNumber,
+                    Item = order.LineItems.Count(),
+                    Total = order.LineItems.Sum(item => item.Price),
+                    LineItems = order.LineItems
+
+                };
+            });
+
+            var orderedSummaries = summaries.OrderBy(summary => summary.Total);
+
+            var summary = orderedSummaries.First();
+            var summaryWithTax = summary with
+            {
+                Total = summary.Total * 1.25m
+            };
+            var item = summaryWithTax.LineItems.First();
+            item.Name = "Pluralsight";
+
+            return summaryWithTax;
+        }
     }
 }
