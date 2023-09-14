@@ -55,6 +55,20 @@
         {
             return new() { LineItems = items.ToArray() };
         }
+        // Deconstruct method   
+        public void Deconstruct(out decimal total, out bool ready)
+        {
+            total = Total;
+            ready = IsReadyForShipment;
+        }
+        public void Deconstruct(out decimal total,
+           out bool ready,
+           out IEnumerable<Item> items)
+        {
+            total = Total;
+            ready = IsReadyForShipment;
+            items = LineItems;
+        }
     }
 
 

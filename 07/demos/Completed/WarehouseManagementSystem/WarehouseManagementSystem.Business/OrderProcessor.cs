@@ -61,7 +61,7 @@ namespace WarehouseManagementSystem.Business
             var summaries = orders.Select(order =>
             {
                 return 
-                ( 
+                (                                                                               
                     Order : order.OrderNumber,
                     Items : order.LineItems.Count(),
                     Total : order.LineItems.Sum(item => item.Price),

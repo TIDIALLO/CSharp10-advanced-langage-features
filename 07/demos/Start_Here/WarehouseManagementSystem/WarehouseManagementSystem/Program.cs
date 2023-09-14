@@ -27,16 +27,33 @@ Order order = new Order
     }
 };
 
-var first = processor.Process(orders);
-var second = processor.Process(orders);
-Console.WriteLine($"Are theses values equas? { first == second}"); // True
-Console.WriteLine($"Are theses values equas? {first.Equals(second)}"); // True
+    
 
-var third = first with { amountOfItems = 0};                       // Because the values tuple isn't a reference type
-Console.WriteLine($"Are theses values equas? {first == third}"); // False
+// Deconstruct Other Objects 
+var (orderTotal, isReady) = order;
+
+var dictionary = new Dictionary<string, Order>();
+
+foreach (var (orderId, theOrder) in dictionary)
+{
+
+}
 
 
+
+// Tuple elements ignored because of the names
+(Guid id, int total) GetSummary()
+{
+    return (orderId: Guid.Empty, orderTotal: 10);
+}
+
+
+Action<(Guid id, int amountOfItems)> log = (tuple) =>
+{
+
+};
 processor.Process(orders);
+
 /*
 
 var instance2 = new
