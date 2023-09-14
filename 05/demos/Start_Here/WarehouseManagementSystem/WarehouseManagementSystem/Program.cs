@@ -18,7 +18,7 @@ class Program
             }
         };
 
-        var report = order.GenerateReport("Tidiane Diallo");
+        var report = order.GenerateReport(recepient: "Tidiane Diallo");
         Console.WriteLine(report);  
     }
 }
