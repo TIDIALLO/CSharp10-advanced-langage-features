@@ -28,20 +28,14 @@ var onCompleted = (Order order) =>
     Console.WriteLine($"Processed {order.OrderNumber}");
 };
 
-processor.OrderCreated += (sender, eventArgs) => {
-    Thread.Sleep(1000);
-    Console.WriteLine("1");
-};
-processor.OrderCreated += (sender, eventArgs) => {
-    Thread.Sleep(1000);
-    Console.WriteLine("2");
-};
-processor.OrderCreated += (sender, eventArgs) => {
-    Thread.Sleep(1000);
-    Console.WriteLine("3");
-};
+processor.OrderCreated += Log;
+
 processor.Process(order, onCompleted);
 
+void Log(object sender, OrderCreatedEventArgs args)
+{
+    Console.WriteLine("Log method call");
+}
 
 
 

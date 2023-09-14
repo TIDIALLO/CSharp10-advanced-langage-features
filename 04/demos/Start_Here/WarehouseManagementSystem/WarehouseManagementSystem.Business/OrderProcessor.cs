@@ -8,10 +8,10 @@ namespace WarehouseManagementSystem.Business
         // public delegate void ProcessCompleted(Order order);
 
         public Func<Order, bool> OnOrderInitialized { get; set; }
-        public event EventHandler OrderCreated;
-        public virtual void OnOrderCreated()
+        public event EventHandler<OrderCreatedEventArgs> OrderCreated;
+        public virtual void OnOrderCreated(OrderCreatedEventArgs args)
         {
-            OrderCreated?.Invoke(this, EventArgs.Empty);
+            OrderCreated?.Invoke(this, args);
         }
         private void Initialize(Order order)
         {
@@ -27,7 +27,12 @@ namespace WarehouseManagementSystem.Business
             Action<Order> onCompleted = default)
         {
             Initialize(order);
-            OnOrderCreated();
+            OnOrderCreated(new()
+            {
+                order = order,
+                OldTotal = 100,
+                NewTotal = 90,
+            });
             onCompleted?.Invoke(order);
         }
     }
