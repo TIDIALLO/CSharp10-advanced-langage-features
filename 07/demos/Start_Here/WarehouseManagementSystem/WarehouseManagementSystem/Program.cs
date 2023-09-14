@@ -26,23 +26,15 @@ Order order = new Order
         new Item { Name = "PS5", Price = 80 }
     }
 };
+Guid orderNumber;
+decimal sum;
 
-var group = (
+(orderNumber, var items, sum) = (
     order.OrderNumber, 
     order.LineItems, 
-    sum: order.LineItems.Sum(item => item.Price)
+    order.LineItems.Sum(item => item.Price)
 );
-var groupAsAnumousType = new
-{
-    order.OrderNumber,
-    order.LineItems,
-    sum = order.LineItems.Sum(item => item.Price)
-};
-
-//var json = JsonSerializer.Serialize(groupAsAnumousType);
-var json = JsonSerializer.Serialize(group, options: new () { IncludeFields = true});
-
-Console.WriteLine(json);    
+Console.WriteLine(order.OrderNumber);
 
 processor.Process(orders);
 /*
