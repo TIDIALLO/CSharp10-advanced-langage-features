@@ -18,7 +18,11 @@ class Program
             }
         };
 
-        var report = order.GenerateReport(recepient: "Tidiane Diallo");
-        Console.WriteLine(report);  
+        /*var report = order.GenerateReport(recepient: "Tidiane Diallo");
+        Console.WriteLine(report); */
+        var cheapestItems = order.LineItems.Where(item => item.Price > 60)
+                                   .OrderBy(item => item.Price)
+                                   .Take(5);
+        Console.WriteLine(cheapestItems);
     }
 }
