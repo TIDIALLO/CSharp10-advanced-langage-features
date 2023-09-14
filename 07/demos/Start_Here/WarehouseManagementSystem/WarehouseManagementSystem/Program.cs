@@ -26,15 +26,15 @@ Order order = new Order
         new Item { Name = "PS5", Price = 80 }
     }
 };
-Guid orderNumber;
-decimal sum;
 
-(orderNumber, var items, sum) = (
-    order.OrderNumber, 
-    order.LineItems, 
-    order.LineItems.Sum(item => item.Price)
-);
-Console.WriteLine(order.OrderNumber);
+var first = processor.Process(orders);
+var second = processor.Process(orders);
+Console.WriteLine($"Are theses values equas? { first == second}"); // True
+Console.WriteLine($"Are theses values equas? {first.Equals(second)}"); // True
+
+var third = first with { amountOfItems = 0};                       // Because the values tuple isn't a reference type
+Console.WriteLine($"Are theses values equas? {first == third}"); // False
+
 
 processor.Process(orders);
 /*

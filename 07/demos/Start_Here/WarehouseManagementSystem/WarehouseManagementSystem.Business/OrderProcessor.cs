@@ -50,17 +50,17 @@ namespace WarehouseManagementSystem.Business
 
             OnOrderProcessCompleted(new() { Order = order });
         }
-        public object Process(IEnumerable<Order> orders)
+        public (Guid orderNumber, int amountOfItems, decimal total, IEnumerable<Item> items) Process(IEnumerable<Order> orders)
         {
             var summaries = orders.Select(order =>
             {
-                return new 
-                { 
-                    Order = order.OrderNumber,
-                    Items = order.LineItems.Count(),
-                    Total = order.LineItems.Sum(item => item.Price),
-                    LineItems = order.LineItems
-                };
+                return  
+                (
+                    Order : order.OrderNumber,
+                    Items : order.LineItems.Count(),
+                    Total : order.LineItems.Sum(item => item.Price),
+                    LineItems : order.LineItems
+                );
             });
 
             var orderedSummaries =
