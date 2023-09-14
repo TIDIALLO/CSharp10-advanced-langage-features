@@ -39,7 +39,9 @@ var groupAsAnumousType = new
     sum = order.LineItems.Sum(item => item.Price)
 };
 
-var json = JsonSerializer.Serialize(groupAsAnumousType);
+//var json = JsonSerializer.Serialize(groupAsAnumousType);
+var json = JsonSerializer.Serialize(group, options: new () { IncludeFields = true});
+
 Console.WriteLine(json);    
 
 processor.Process(orders);
