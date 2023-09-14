@@ -12,10 +12,24 @@ Order order = new Order
         new Item { Name = "PS5", Price = 80 }
     }
 };
-var instance = new { Total = 100, AmountOfItems =10};
+/*var instance = new { Total = 100, AmountOfItems = 10 };
 var instance2 = new { Total = 100, AmountOfItems =10};
 
-Console.WriteLine(instance.Equals(instance2));
-Console.WriteLine(instance  ==instance2);
+Console.WriteLine(instance.Equals(instance2));  // check the referene equality
+Console.WriteLine(instance  == instance2);// check properties
+Console.ReadLine();*/
 
-Console.ReadLine();
+var subset = new
+{
+    order.OrderNumber,
+    order.Total,
+    AveragePrice = order.LineItems.Average(item => item.Price)
+};
+Console.WriteLine(subset);
+
+var instance = new
+{
+    Read = new Func<String>(Console.ReadLine)
+};
+
+instance.Read();
