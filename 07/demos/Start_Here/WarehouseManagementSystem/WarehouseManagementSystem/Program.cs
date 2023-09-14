@@ -27,8 +27,23 @@ Order order = new Order
     }
 };
 
-processor.Process(orders);
+var group = (
+    order.OrderNumber, 
+    order.LineItems, 
+    sum: order.LineItems.Sum(item => item.Price)
+);
+var groupAsAnumousType = new
+{
+    order.OrderNumber,
+    order.LineItems,
+    sum = order.LineItems.Sum(item => item.Price)
+};
 
+var json = JsonSerializer.Serialize(groupAsAnumousType);
+Console.WriteLine(json);    
+
+processor.Process(orders);
+/*
 
 var instance2 = new
 {
@@ -122,4 +137,4 @@ void SendConfirmationEmail(Order order)
     Console.WriteLine($"Order Confirmation Email for {order.OrderNumber}");
 }
 
-Console.ReadLine();
+Console.ReadLine();*/
