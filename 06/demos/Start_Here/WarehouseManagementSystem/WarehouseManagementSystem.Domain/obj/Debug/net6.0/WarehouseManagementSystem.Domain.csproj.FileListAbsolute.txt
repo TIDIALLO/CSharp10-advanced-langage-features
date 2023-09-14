@@ -1,0 +1,12 @@
+D:\dev\dotnet\c#-10\codes\CSharp10-advanced-langage-features\06\demos\Start_Here\WarehouseManagementSystem\WarehouseManagementSystem.Domain\bin\Debug\net6.0\WarehouseManagementSystem.Domain.deps.json
+D:\dev\dotnet\c#-10\codes\CSharp10-advanced-langage-features\06\demos\Start_Here\WarehouseManagementSystem\WarehouseManagementSystem.Domain\bin\Debug\net6.0\WarehouseManagementSystem.Domain.dll
+D:\dev\dotnet\c#-10\codes\CSharp10-advanced-langage-features\06\demos\Start_Here\WarehouseManagementSystem\WarehouseManagementSystem.Domain\bin\Debug\net6.0\WarehouseManagementSystem.Domain.pdb
+D:\dev\dotnet\c#-10\codes\CSharp10-advanced-langage-features\06\demos\Start_Here\WarehouseManagementSystem\WarehouseManagementSystem.Domain\obj\Debug\net6.0\WarehouseManagementSystem.Domain.csproj.AssemblyReference.cache
+D:\dev\dotnet\c#-10\codes\CSharp10-advanced-langage-features\06\demos\Start_Here\WarehouseManagementSystem\WarehouseManagementSystem.Domain\obj\Debug\net6.0\WarehouseManagementSystem.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\dev\dotnet\c#-10\codes\CSharp10-advanced-langage-features\06\demos\Start_Here\WarehouseManagementSystem\WarehouseManagementSystem.Domain\obj\Debug\net6.0\WarehouseManagementSystem.Domain.AssemblyInfoInputs.cache
+D:\dev\dotnet\c#-10\codes\CSharp10-advanced-langage-features\06\demos\Start_Here\WarehouseManagementSystem\WarehouseManagementSystem.Domain\obj\Debug\net6.0\WarehouseManagementSystem.Domain.AssemblyInfo.cs
+D:\dev\dotnet\c#-10\codes\CSharp10-advanced-langage-features\06\demos\Start_Here\WarehouseManagementSystem\WarehouseManagementSystem.Domain\obj\Debug\net6.0\WarehouseManagementSystem.Domain.csproj.CoreCompileInputs.cache
+D:\dev\dotnet\c#-10\codes\CSharp10-advanced-langage-features\06\demos\Start_Here\WarehouseManagementSystem\WarehouseManagementSystem.Domain\obj\Debug\net6.0\WarehouseManagementSystem.Domain.dll
+D:\dev\dotnet\c#-10\codes\CSharp10-advanced-langage-features\06\demos\Start_Here\WarehouseManagementSystem\WarehouseManagementSystem.Domain\obj\Debug\net6.0\refint\WarehouseManagementSystem.Domain.dll
+D:\dev\dotnet\c#-10\codes\CSharp10-advanced-langage-features\06\demos\Start_Here\WarehouseManagementSystem\WarehouseManagementSystem.Domain\obj\Debug\net6.0\WarehouseManagementSystem.Domain.pdb
+D:\dev\dotnet\c#-10\codes\CSharp10-advanced-langage-features\06\demos\Start_Here\WarehouseManagementSystem\WarehouseManagementSystem.Domain\obj\Debug\net6.0\ref\WarehouseManagementSystem.Domain.dll

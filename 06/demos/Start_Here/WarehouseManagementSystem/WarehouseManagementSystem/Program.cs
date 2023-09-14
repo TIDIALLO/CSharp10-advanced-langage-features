@@ -12,72 +12,10 @@ Order order = new Order
         new Item { Name = "PS5", Price = 80 }
     }
 };
+var instance = new { Total = 100, AmountOfItems =10};
+var instance2 = new { Total = 100, AmountOfItems =10};
 
-var cheapestItems = order.LineItems.Where(item => item.Price > 60)
-                                   .OrderBy(item => item.Price)
-                                   .Take(5);
-
-
-
-
-
-
-
-
-Console.ReadLine();
-
-// Creating an Extension Method Library
-var report = order.GenerateReport(recipient: "Filip Ekberg");
-Console.WriteLine(report);
-
-
-Console.ReadLine();
-
-// Creating an Extension Method for IEnumerable<T> 
-foreach (var item in order.LineItems.Find(item => item.Price > 60))
-{
-    Console.WriteLine(item.Price);
-}
-
-var isReadyForShipment = (Order order) =>
-{
-    return order.IsReadyForShipment;
-};
-var processor = new OrderProcessor
-{
-    OnOrderInitialized = isReadyForShipment
-};
-
-processor.OrderCreated += (sender, args) =>
-{
-
-};
-processor.OrderCreated += Log;
-
-processor.Process(order);
-
-
-
-
-
-
-
-
-void Log(object sender, EventArgs args)
-{
-    Console.WriteLine("Log method call");
-}
-
-bool SendMessageToWarehouse(Order order)
-{
-    Console.WriteLine($"Please pack the order {order.OrderNumber}");
-
-    return true;
-}
-
-void SendConfirmationEmail(Order order)
-{
-    Console.WriteLine($"Order Confirmation Email for {order.OrderNumber}");
-}
+Console.WriteLine(instance.Equals(instance2));
+Console.WriteLine(instance  ==instance2);
 
 Console.ReadLine();
