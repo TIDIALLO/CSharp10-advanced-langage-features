@@ -11,17 +11,19 @@ var isReadyForShipment = (Order order) =>
 
 Order order = new Order
 {
-    ShippingProvider = new ShippingProvider() { FreightCost = 500},
+    ShippingProvider = new ShippingProvider() { FreightCost = 500 },
     LineItems = new[]
     {
         new Item { Name = "PS1", Price = 50 },
         new Item { Name = "PS2", Price = 60 },
         new Item { Name = "PS4", Price = 70 },
         new Item { Name = "PS5", Price = 80 }
-    }
+    },
+    Total = 85
 };
 
-
+Console.WriteLine(order.GenerateReport());
+Console.ReadLine(); 
 
 #region Load the orders from orders.json
 IEnumerable<Order> orders = JsonSerializer.Deserialize<Order[]>(File.ReadAllText("orders.json"));

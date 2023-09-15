@@ -2,15 +2,33 @@
 {
     public static class OrderExtensions
     {
+
+
+         
         public static string GenerateReport
             (this Order order)
         {
+
+            var status = order switch
+            {
+                (>100 , true) match => "High priority Order ",
+
+                { Total: > 50 and <=100 } => "Priority Order",
+                (>50 and <= 100, true) => "Priority Order",
+
+                (var total, true) => $"Order is ready {total} ",
+                (_, false) => "Order is not ready ",
+                 _ => "Order is null",
+            };
+
             return $"ORDER REPORT ({order.OrderNumber})" +
                     $"{Environment.NewLine}" +
                     $"Items: {order.LineItems.Count()}" +
                     $"{Environment.NewLine}" +
                     $"Total: {order.Total}" +
-                    $"{Environment.NewLine}";
+                    $"{Environment.NewLine}"+
+                    $"{status} "; ;
+
         }
 
         public static string GenerateReport

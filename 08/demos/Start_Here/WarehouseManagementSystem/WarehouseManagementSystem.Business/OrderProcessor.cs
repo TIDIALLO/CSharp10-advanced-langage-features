@@ -51,21 +51,21 @@ namespace WarehouseManagementSystem.Business
             OnOrderProcessCompleted(new() { Order = order });
         }
 
-        public IEnumerable<(Guid orderNumber, 
-            int amountOfItems, 
-            decimal total, 
+        public IEnumerable<(Guid orderNumber,
+            int amountOfItems,
+            decimal total,
             IEnumerable<Item> items)>
             Process(IEnumerable<Order> orders)
         {
 
             var summaries = orders.Select(order =>
             {
-                return 
-                ( 
-                    Order : order.OrderNumber,
-                    Items : order.LineItems.Count(),
-                    Total : order.LineItems.Sum(item => item.Price),
-                    LineItems : order.LineItems
+                return
+                (
+                    Order: order.OrderNumber,
+                    Items: order.LineItems.Count(),
+                    Total: order.LineItems.Sum(item => item.Price),
+                    LineItems: order.LineItems
                 );
             });
 
@@ -84,15 +84,15 @@ namespace WarehouseManagementSystem.Business
         }
 
         private decimal CalculateFreightCost(Order order)
+        => order.ShippingProvider switch
         {
-            var freightCost = order.ShippingProvider switch
-            {
-                SwedishPostalServiceShippingProvider { DeliverNextDay: true } => 100m,
-                SwedishPostalServiceShippingProvider => 0m,
-                _ => 50m
-            };
-            return freightCost; 
-        }
+            SwedishPostalServiceShippingProvider { DeliverNextDay: true }
+            provider => provider.FreightCost + 50m,
 
+            SwedishPostalServiceShippingProvider provider => provider.FreightCost + 50m,
+
+            var provider => provider?.FreightCost ?? 50m
+        };
     }
+    
 }
