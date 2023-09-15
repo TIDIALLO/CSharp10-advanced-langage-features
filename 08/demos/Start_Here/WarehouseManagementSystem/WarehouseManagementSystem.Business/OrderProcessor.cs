@@ -84,17 +84,15 @@ namespace WarehouseManagementSystem.Business
         }
 
         private decimal CalculateFreightCost(Order order)
-        => order.ShippingProvider switch
+        {
+            var freightCost = order.ShippingProvider switch
             {
-                SwedishPostalServiceShippingProvider 
-                { DeliverNextDay : true }
-                provider => provider.FreightCost + 50m,
-                
-                SwedishPostalServiceShippingProvider
-                provider => provider.FreightCost - 50m,
-
-                var provider => provider?.FreightCost ?? 50m
+                SwedishPostalServiceShippingProvider { DeliverNextDay: true } => 100m,
+                SwedishPostalServiceShippingProvider => 0m,
+                _ => 50m
             };
+            return freightCost; 
+        }
 
     }
 }
