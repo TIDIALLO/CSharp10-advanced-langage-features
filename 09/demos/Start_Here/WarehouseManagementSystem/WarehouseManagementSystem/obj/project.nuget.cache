@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nCvsDqJAREoW6cOy68eHrYuA/vLFjlYJAJkNNj064tCf63mQfEW8X266rhVw+k/eBdUx0MKA1DQ1x3/vET6Hag==",
+  "dgSpecHash": "PQjL8ESqiK9j2Ydq1SqYktyGFfrZI+EqY10i5OatEN/+wJAwRuFGpZUz6E5354Ex4ikXfVZ1A+e02Pe1Y95sLw==",
   "success": true,
   "projectFilePath": "D:\\dev\\dotnet\\c#-10\\codes\\CSharp10-advanced-langage-features\\09\\demos\\Start_Here\\WarehouseManagementSystem\\WarehouseManagementSystem\\WarehouseManagementSystem.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\diall\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
-    "C:\\Users\\diall\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512",
-    "C:\\Users\\diall\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512",
-    "C:\\Users\\diall\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.16\\microsoft.netcore.app.host.win-x64.6.0.16.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

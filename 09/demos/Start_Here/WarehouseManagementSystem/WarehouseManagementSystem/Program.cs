@@ -4,27 +4,31 @@ using WarehouseManagementSystem.Domain;
 using WarehouseManagementSystem.Domain.Extensions;
 
 
+
 var isReadyForShipment = (Order order) =>
 {
     return order.IsReadyForShipment;
 };
 
-Order order = new CancelledOrder
+var itemsList = new[]
 {
-    ShippingProvider = new ShippingProvider() { FreightCost = 500},
-    LineItems = new[]
-    {
-        new Item { Name = "PS1", Price = 50 },
-        new Item { Name = "PS2", Price = 60 },
-        new Item { Name = "PS4", Price = 70 },
-        new Item { Name = "PS5", Price = 80 }
-    },
-    Total = 101
+    new Item { Name = "PS1", Price = 50 },
+    new Item { Name = "PS2", Price = 60 },
+    new Item { Name = "PS4", Price = 70 },
+    new Item { Name = "PS5", Price = 80 }
 };
+Order order = new Order(101, new(), itemsList, true);
+// Serialize an record
+var orderAsJson = JsonSerializer.Serialize(order,
+    options: new() { WriteIndented = true});
+    Console.WriteLine(orderAsJson);
 //===============     record
 var firstCustomer = new Customer("Tidiane", "Diallo");
-var secondCustomer = new PriorityCustomer("Tidiane", "Diallo");
-Console.WriteLine($"first:  {firstCustomer}");
+var secondCustomer = new PriorityCustomer("Tidiane", "Diallo")
+{
+    Address = new Address("adress", "1234")
+};
+Console.WriteLine($"first:  {firstCustomer.ToString()}");
 Console.WriteLine($"second: {secondCustomer}");
 var result = order switch
 {
