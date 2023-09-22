@@ -10,6 +10,14 @@ var items = new[]
     new Item { Name = "PS4", Price = 70 },
     new Item { Name = "PS5", Price = 80 }
 };
+var processor = new OrderProcessor();
+processor.OrderProcessCompleted += Processor_Completed;
+
+void Processor_Completed(object sender, 
+    OrderProcessCompletedEventArgs arg)
+{
+    var orderNumber = arg.Order.OrderNumber;
+}
 
 Order order = new Order(101, new(), items);
 
@@ -21,7 +29,7 @@ Console.WriteLine();
 Console.WriteLine();
 
 Console.WriteLine(cancelledOrder.ToString());
-
+/*
 
 
 
@@ -240,5 +248,5 @@ void SendConfirmationEmail(Order order)
 {
     Console.WriteLine($"Order Confirmation Email for {order.OrderNumber}");
 }
-
+*/
 Console.ReadLine();
