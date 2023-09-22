@@ -21,7 +21,11 @@ Order order = new CancelledOrder
     },
     Total = 101
 };
-
+//===============     record
+var firstCustomer = new Customer("Tidiane", "Diallo");
+var secondCustomer = new PriorityCustomer("Tidiane", "Diallo");
+Console.WriteLine($"first:  {firstCustomer}");
+Console.WriteLine($"second: {secondCustomer}");
 var result = order switch
 {
     PriorityOrder when HasAvailability() => "",
@@ -124,7 +128,7 @@ Console.WriteLine(json);
 Console.ReadLine();
 
 // Modifying and Returning Anonymous Types 
-var result = processor.Process(orders);
+var resultt = processor.Process(orders);
 
 var type = result.GetType();
 var properties = type.GetProperties();
