@@ -28,9 +28,8 @@ namespace WarehouseManagementSystem.Business
         {
             Initialize(order);
 
-            OnOrderCreated(new()
+            OnOrderCreated(new(order)
             {
-                Order = order,
                 OldTotal = 100,
                 NewTotal = 80
             });
@@ -41,9 +40,8 @@ namespace WarehouseManagementSystem.Business
         {
             Initialize(order);
 
-            OnOrderCreated(new()
+            OnOrderCreated(new (order)
             {
-                Order = order,
                 OldTotal = 100,
                 NewTotal = 100 - discount
             });

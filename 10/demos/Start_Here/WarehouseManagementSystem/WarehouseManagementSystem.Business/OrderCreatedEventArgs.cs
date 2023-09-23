@@ -9,10 +9,15 @@ namespace WarehouseManagementSystem.Business
 {
     public class OrderCreatedEventArgs : EventArgs
     {
-        public Order? Order { get; set; }
+        public Order Order { get; init; }
         public decimal OldTotal { get; set; }
         public decimal NewTotal { get; set; }
 
+
+        public OrderCreatedEventArgs(Order order)
+        {
+            Order = order;
+        }
         
     }
 }
